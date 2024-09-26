@@ -14,7 +14,6 @@ export const FormInput: React.FC<InputProps> = ({ label, value, onChange }) => {
         className="border border-slate-950 shadow-md p-1 rounded w-full"
         onChange={(e) => onChange(e)}
       />
-     
     </div>
   );
 };

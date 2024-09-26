@@ -50,10 +50,17 @@ export const DefaultDisplay: React.FC = () => {
     setMostrarResultado(true);
   };
 
+  //Limpa todas as informações
+  const limparTela = () => {
+    setMediaNotas(0)
+    setMostrarResultado(false);
+    setNotaAluno([])
+  }
+
   return (
     <div className="flex flex-col-reverse md:flex-row">
       {/* div média */}
-      <div className="bg-black p-4 rounded-b-md md:rounded-l-md md:rounded-r-none shadow-md w-80">
+      <div className="bg-black flex flex-col justify-between p-4 rounded-b-md md:rounded-l-md md:rounded-r-none shadow-md w-80">
         <p className="text-lg text-center mb-1 font-mono font-medium text-gray-200">
           Sua grade:{" "}
         </p>
@@ -61,11 +68,14 @@ export const DefaultDisplay: React.FC = () => {
         <NotasLista notaAluno={notaAluno} />
 
         <ExibirNota mediaNotas={mediaNotas} mostrarResultado={mostrarResultado} />
-        <Button color="indigo" label="Calcular Média" onClick={calcularMedia} />
+        <div className="flex gap-2">
+          <Button color="indigo" label="Calcular Média" onClick={calcularMedia} />
+          <Button color="indigo" label="Limpar" onClick={limparTela} />
+        </div>
       </div>
 
       {/* formulário */}
-      <form className="bg-indigo-700 p-4 rounded-t-md md:rounded-r-md md:rounded-l-none shadow-md w-80">
+      <form className="bg-indigo-700 p-2 rounded-t-md md:rounded-r-md md:rounded-l-none shadow-md w-80">
         <p className="text-lg text-center mb-1 font-mono font-medium text-gray-200">
           Adicione suas Notas:{" "}
         </p>
