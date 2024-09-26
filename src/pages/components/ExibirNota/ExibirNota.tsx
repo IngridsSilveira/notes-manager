@@ -5,7 +5,7 @@ interface ExibirNotaProps {
 export const ExibirNota: React.FC<ExibirNotaProps> = ({mediaNotas, mostrarResultado}) => {
     return (
         <div>
-        <h2 className="text-white font-medium">
+        <h2 className="text-white font-medium mt-2">
           Média total: {mediaNotas}
         </h2>
         {mostrarResultado && (

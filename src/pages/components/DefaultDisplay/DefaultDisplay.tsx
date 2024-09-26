@@ -50,11 +50,10 @@ export const DefaultDisplay: React.FC = () => {
     setMostrarResultado(true);
   };
 
-
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-col-reverse md:flex-row">
       {/* div média */}
-      <div className="bg-black p-4 rounded-l-md shadow-md w-80">
+      <div className="bg-black p-4 rounded-b-md md:rounded-l-md md:rounded-r-none shadow-md w-80">
         <p className="text-lg text-center mb-1 font-mono font-medium text-gray-200">
           Sua grade:{" "}
         </p>
@@ -66,16 +65,18 @@ export const DefaultDisplay: React.FC = () => {
       </div>
 
       {/* formulário */}
-      <form className="bg-indigo-700 p-4 rounded-r-md shadow-md w-80">
+      <form className="bg-indigo-700 p-4 rounded-t-md md:rounded-r-md md:rounded-l-none shadow-md w-80">
         <p className="text-lg text-center mb-1 font-mono font-medium text-gray-200">
           Adicione suas Notas:{" "}
         </p>
         <FormInput
           label="Materia"
+          value={materia}
           onChange={(e) => setMateria(e.target.value)}
         />
         <FormInput
           label="Nota:"
+          value={nota}
           onChange={(e) => setNota(Number(e.target.value))}
         />
         <Button color="black" label="Adicionar" onClick={notaEstudante} />

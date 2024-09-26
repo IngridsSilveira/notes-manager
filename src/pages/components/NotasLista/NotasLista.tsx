@@ -8,7 +8,7 @@ interface NotasListaProps {
 
 export const NotasLista: React.FC<NotasListaProps> = ({ notaAluno }) => {
   return (
-    <ul className="flex flex-wrap items-center justify-center w-64">
+    <ul className="flex items-center justify-center flex-wrap">
       {notaAluno.map((nota) => {
         return (
           <li
